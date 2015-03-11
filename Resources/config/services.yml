@@ -1,0 +1,12 @@
+parameters:
+    mtt_doctrine_to_ember.converter.class: Mtt\Bundle\DoctrineToEmberBundle\Services\Converter
+    mtt_doctrine_to_ember.generator.class: Mtt\Bundle\DoctrineToEmberBundle\Services\Generator
+
+services:
+    mtt_doctrine_to_ember.converter:
+        class: %mtt_doctrine_to_ember.converter.class%
+    mtt_doctrine_to_ember.generator:
+        class: %mtt_doctrine_to_ember.generator.class%
+        arguments:
+            - %mtt_doctrine_to_ember.application_variable%
+            - %mtt_doctrine_to_ember.models_path%

@@ -1,0 +1,6 @@
+{{ appVariable }}.{{ modelName }} = DS.Model.extend({
+{% for field in fields %}
+    {{ field.field_name }}: DS.attr('{{ field.ember_type }}'){% if not loop.last %},{% endif %}
+
+{% endfor %}
+});
