@@ -40,6 +40,7 @@ Configure the DoctrineToEmberBundle:
 
 ``` yaml
 # app/config/config.yml
+
 mtt_doctrine_to_ember:
     application_variable: MySuperApp
     models_path: "%kernel.root_dir%/../web/js/app/models"
