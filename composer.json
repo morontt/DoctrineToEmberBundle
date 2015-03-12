@@ -27,7 +27,7 @@
         "twig/twig": "~1.11"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Mtt\\Bundle\\DoctrineToEmberBundle": ""
         }
     },
