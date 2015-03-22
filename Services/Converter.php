@@ -23,23 +23,25 @@ class Converter
 
         $entities = array();
         foreach ($metadata as $item) {
-            $class = array(
-                'name' => $item->name,
-                'modelName' => $this->getModelName($item->name),
-                'fields' => array(),
-            );
+            if (!$item->isMappedSuperclass) {
+                $class = array(
+                    'name' => $item->name,
+                    'modelName' => $this->getModelName($item->name),
+                    'fields' => array(),
+                );
 
-            foreach ($item->fieldMappings as $field) {
-                if (!isset($field['id'])) {
-                    $class['fields'][] = array(
-                        'field_name' => $field['fieldName'],
-                        'doctrine_type' => $field['type'],
-                        'ember_type' => $this->getEmberDataType($field['type']),
-                    );
+                foreach ($item->fieldMappings as $field) {
+                    if (!isset($field['id'])) {
+                        $class['fields'][] = array(
+                            'field_name' => $field['fieldName'],
+                            'doctrine_type' => $field['type'],
+                            'ember_type' => $this->getEmberDataType($field['type']),
+                        );
+                    }
                 }
-            }
 
-            $entities[] = $class;
+                $entities[] = $class;
+            }
         }
 
         return $entities;
