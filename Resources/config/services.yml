@@ -4,9 +4,9 @@ parameters:
 
 services:
     mtt_doctrine_to_ember.converter:
-        class: %mtt_doctrine_to_ember.converter.class%
+        class: '%mtt_doctrine_to_ember.converter.class%'
     mtt_doctrine_to_ember.generator:
-        class: %mtt_doctrine_to_ember.generator.class%
+        class: '%mtt_doctrine_to_ember.generator.class%'
         arguments:
-            - %mtt_doctrine_to_ember.application_variable%
-            - %mtt_doctrine_to_ember.models_path%
+            - '%mtt_doctrine_to_ember.application_variable%'
+            - '%mtt_doctrine_to_ember.models_path%'
